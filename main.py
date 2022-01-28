@@ -8,9 +8,12 @@ screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
 
-car = CarManager()
+car = CarManager(350)
+car1 = CarManager(-350)
 
 game_is_on = True
 while game_is_on:
-    time.sleep(0.1)
+    time.sleep(0.5)
     screen.update()
+    car.go_left()
+    car1.go_right()
