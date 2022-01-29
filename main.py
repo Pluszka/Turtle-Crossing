@@ -18,12 +18,13 @@ car_r = CarManager('r')
 car_l = CarManager('l')
 turtle = Player()
 
+screen.listen()
+screen.onkey(key='Up', fun=turtle.go_up)
+screen.onkey(key='Down', fun=turtle.go_down)
+screen.onkey(key='Left', fun=turtle.go_left)
+screen.onkey(key='Right', fun=turtle.go_right)
+
 game_is_on = True
 while game_is_on:
-    screen.listen()
-    screen.onkey(key='Up', fun=turtle.go_up)
-    screen.onkey(key='Down', fun=turtle.go_down)
-    screen.onkey(key='Left', fun=turtle.go_left)
-    screen.onkey(key='Right', fun=turtle.go_right)
-
+    turtle.check_pos()
     cars_moving(car_r, car_l)

@@ -7,7 +7,7 @@ MOVE_INCREMENT = 10
 CARS_LEN = [2,3,4]
 LEFT = [-600, -10]
 RIGHT = [10, 600]
-
+ROAD = [-250, 250]
 
 class CarManager(Turtle):
 
@@ -25,7 +25,7 @@ class CarManager(Turtle):
             car.shape('square')
             car.color(choice(COLORS))
             car.shapesize(stretch_wid=1, stretch_len= choice(CARS_LEN))
-            car.setpos(x=randint(side[0], side[1]), y=randint(-200, 200))
+            car.setpos(x=randint(side[0], side[1]), y=randint(ROAD[0], ROAD[1]))
             self.cars.append(car)
 
     def go_left(self):
@@ -33,7 +33,7 @@ class CarManager(Turtle):
             car.setheading(180)
             car.forward(10)
             if car.xcor() < -400:
-                car.setpos(x=randint(350, 400), y=randint(-200, 200))
+                car.setpos(x=randint(350, 400), y=randint(ROAD[0], ROAD[1]))
 
     def go_right(self):
         for car in self.cars:

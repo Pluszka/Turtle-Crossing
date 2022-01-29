@@ -18,7 +18,7 @@ class Player(Turtle):
         self.penup()
         self.color('pink')
         self.setheading(90)
-        self.setpos(x=0, y=-250)
+        self.setpos(STARTING_POSITION)
 
     def go_up(self):
         self.setheading(90)
@@ -35,3 +35,8 @@ class Player(Turtle):
     def go_right(self):
         self.setheading(0)
         self.forward(10)
+
+    def check_pos(self):
+        if self.ycor() > FINISH_LINE_Y:
+            self.setposition(STARTING_POSITION)
+
