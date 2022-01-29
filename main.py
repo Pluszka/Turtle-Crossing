@@ -12,11 +12,12 @@ car_r = CarManager('r')
 car_l = CarManager('l')
 turtle = Player()
 scoreboard = Scoreboard()
+nap_time = 0.4
 
 def cars_moving(r, l):
     r.go_left()
     l.go_right()
-    time.sleep(0.4)
+    time.sleep(nap_time)
     screen.update()
 
 screen.listen()
@@ -28,6 +29,7 @@ screen.onkey(key='Right', fun=turtle.go_right)
 game_is_on = True
 while game_is_on:
     if turtle.check_pos():
+        nap_time *=0.5
         scoreboard.add_lvl()
     cars_moving(car_r, car_l)
     knock = car_r.knock(turtle)
