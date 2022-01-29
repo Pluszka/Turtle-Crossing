@@ -39,4 +39,7 @@ class Player(Turtle):
     def check_pos(self):
         if self.ycor() > FINISH_LINE_Y:
             self.setposition(STARTING_POSITION)
+        elif self.ycor() < -300 or self.xcor() > 300 or self.xcor() < -300:
+            self.setposition(STARTING_POSITION)
+
 
