@@ -5,8 +5,9 @@ COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
 CARS_LEN = [2,3,4]
-LEFT = [-300, -100]
-RIGHT = [100, 300]
+LEFT = [-600, -10]
+RIGHT = [10, 600]
+
 
 class CarManager(Turtle):
 
@@ -18,7 +19,7 @@ class CarManager(Turtle):
 
     def create(self, side):
         side = self.check_side(side)
-        for car in range(20):
+        for car in range(10):
             car = Turtle()
             car.penup()
             car.shape('square')
@@ -30,15 +31,19 @@ class CarManager(Turtle):
     def go_left(self):
         for car in self.cars:
             car.setheading(180)
-            car.forward(100)
+            car.forward(10)
+            if car.xcor() < -400:
+                car.setpos(x=randint(350, 400), y=randint(-200, 200))
 
     def go_right(self):
         for car in self.cars:
             car.setheading(0)
-            car.forward(100)
+            car.forward(10)
+            if car.xcor() > 400:
+                car.setpos(x=randint(-400, -350), y=randint(-200, 200))
 
     def check_side(self, side):
         if side == 'r':
            return RIGHT
-        else:
+        elif side == 'l':
             return LEFT
