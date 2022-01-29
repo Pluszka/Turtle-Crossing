@@ -2,7 +2,7 @@ from turtle import Turtle
 FONT = ("Courier", 15, "bold")
 OVER_FONT = ("Courier", 25, "bold")
 TEXT_COLOR = '#59C3C3'
-DEAD = '#'
+
 
 class Scoreboard(Turtle):
     def __init__(self):
