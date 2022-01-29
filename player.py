@@ -3,7 +3,7 @@ from turtle import Turtle
 STARTING_POSITION = (0, -280)
 MOVE_DISTANCE = 10
 FINISH_LINE_Y = 280
-
+TURTLE_COLOR = '#59C3C3'
 
 class Player(Turtle):
 
@@ -14,7 +14,7 @@ class Player(Turtle):
     def create_spirit(self):
         self.shape('turtle')
         self.penup()
-        self.color('pink')
+        self.color(TURTLE_COLOR)
         self.setheading(90)
         self.setpos(STARTING_POSITION)
 

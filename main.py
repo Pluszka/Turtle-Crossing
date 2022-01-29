@@ -4,9 +4,12 @@ from player import Player
 from car_manager import CarManager
 from scoreboard import Scoreboard
 
+BG = "#050609"
+
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
+screen.bgcolor(BG)
 
 car_r = CarManager('r')
 car_l = CarManager('l')

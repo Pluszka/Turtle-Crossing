@@ -1,7 +1,8 @@
 from turtle import Turtle
 FONT = ("Courier", 15, "bold")
 OVER_FONT = ("Courier", 25, "bold")
-
+TEXT_COLOR = '#59C3C3'
+DEAD = '#'
 
 class Scoreboard(Turtle):
     def __init__(self):
@@ -9,6 +10,7 @@ class Scoreboard(Turtle):
         self.lvl = 1
         self.penup()
         self.hideturtle()
+        self.color(TEXT_COLOR)
         self.setposition(x=-200, y=260)
         self.prompt()
 

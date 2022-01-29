@@ -1,7 +1,7 @@
 from turtle import Turtle
 from random import randint, choice
 
-COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
+COLORS = ["#F5E663", "#FF8427", "#9C528B", "#D4F5F5", "#4062BB", "#52489C"]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
 CARS_LEN = (1.5, 2, 2.5, 3)
@@ -54,4 +54,3 @@ class CarManager(Turtle):
             if car.distance(victim) < 20:
                 return 1
         return 0
-    
