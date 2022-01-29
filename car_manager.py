@@ -1,10 +1,10 @@
 from turtle import Turtle
-from random import choice, randint
+from random import randint, choice
 
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
-CARS_LEN = [2,3,4]
+CARS_LEN = (1.5, 2, 2.5, 3)
 LEFT = [-600, -10]
 RIGHT = [10, 600]
 ROAD = [-250, 250]

@@ -36,4 +36,5 @@ while game_is_on:
     knock += car_l.knock(turtle)
     if knock != 0:
         game_is_on = False
+        scoreboard.game_over()
 screen.exitonclick()
