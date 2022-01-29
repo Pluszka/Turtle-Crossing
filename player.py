@@ -11,8 +11,6 @@ class Player(Turtle):
         super().__init__()
         self.create_spirit()
 
-
-
     def create_spirit(self):
         self.shape('turtle')
         self.penup()
@@ -43,4 +41,3 @@ class Player(Turtle):
         elif self.ycor() < -300 or self.xcor() > 300 or self.xcor() < -300:
             self.setposition(STARTING_POSITION)
             return False
-

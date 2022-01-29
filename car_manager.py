@@ -9,6 +9,7 @@ LEFT = [-600, -10]
 RIGHT = [10, 600]
 ROAD = [-250, 250]
 
+
 class CarManager(Turtle):
 
     def __init__(self, side):
@@ -24,7 +25,7 @@ class CarManager(Turtle):
             car.penup()
             car.shape('square')
             car.color(choice(COLORS))
-            car.shapesize(stretch_wid=1, stretch_len= choice(CARS_LEN))
+            car.shapesize(stretch_wid=1, stretch_len=choice(CARS_LEN))
             car.setpos(x=randint(side[0], side[1]), y=randint(ROAD[0], ROAD[1]))
             self.cars.append(car)
 
@@ -44,13 +45,13 @@ class CarManager(Turtle):
 
     def check_side(self, side):
         if side == 'r':
-           return RIGHT
+            return RIGHT
         elif side == 'l':
             return LEFT
 
     def knock(self, victim):
         for car in self.cars:
             if car.distance(victim) < 20:
-                print('knock!')
                 return 1
         return 0
+    
