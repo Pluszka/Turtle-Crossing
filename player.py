@@ -1,7 +1,37 @@
+from turtle import Turtle
+
 STARTING_POSITION = (0, -280)
 MOVE_DISTANCE = 10
 FINISH_LINE_Y = 280
 
 
-class Player:
-    pass
+class Player(Turtle):
+
+    def __init__(self):
+        super().__init__()
+        self.create_spirit()
+
+
+
+    def create_spirit(self):
+        self.shape('turtle')
+        self.penup()
+        self.color('pink')
+        self.setheading(90)
+        self.setpos(x=0, y=-250)
+
+    def go_up(self):
+        self.setheading(90)
+        self.forward(10)
+
+    def go_down(self):
+        self.setheading(270)
+        self.forward(10)
+
+    def go_left(self):
+        self.setheading(180)
+        self.forward(10)
+
+    def go_right(self):
+        self.setheading(0)
+        self.forward(10)
