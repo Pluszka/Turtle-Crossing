@@ -8,16 +8,16 @@ screen = Screen()
 screen.setup(width=600, height=600)
 screen.tracer(0)
 
+car_r = CarManager('r')
+car_l = CarManager('l')
+turtle = Player()
+scoreboard = Scoreboard()
+
 def cars_moving(r, l):
     r.go_left()
     l.go_right()
     time.sleep(0.4)
     screen.update()
-
-car_r = CarManager('r')
-car_l = CarManager('l')
-turtle = Player()
-scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkey(key='Up', fun=turtle.go_up)
@@ -30,3 +30,8 @@ while game_is_on:
     if turtle.check_pos():
         scoreboard.add_lvl()
     cars_moving(car_r, car_l)
+    knock = car_r.knock(turtle)
+    knock += car_l.knock(turtle)
+    if knock != 0:
+        game_is_on = False
+screen.exitonclick()

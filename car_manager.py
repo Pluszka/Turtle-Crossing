@@ -47,3 +47,10 @@ class CarManager(Turtle):
            return RIGHT
         elif side == 'l':
             return LEFT
+
+    def knock(self, victim):
+        for car in self.cars:
+            if car.distance(victim) < 20:
+                print('knock!')
+                return 1
+        return 0
